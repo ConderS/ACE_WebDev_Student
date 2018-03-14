@@ -15,10 +15,12 @@ export class HomeContainer extends Component {
     render() {
         return (
             <div className="home-container">
-                {/*<Time />
+                <div className="top-container">
+                    <Time />
+                    <Weather />
+                </div>
                 <Me />
-                <Todo />*/}
-                <Weather />
+                <Todo />
             </div>
             );
     }

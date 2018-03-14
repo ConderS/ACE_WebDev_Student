@@ -1,7 +1,8 @@
 .weather-container {
-    height: 5%;
-    width: 60%;
+    height: 25%;
+    width: 45%;
     float: right;
+    margin: 40px 20px 0 0;
 }
 th, td {
     color: #ecf0f1;
