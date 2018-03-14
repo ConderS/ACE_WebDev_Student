@@ -14,7 +14,9 @@ By the end of this walkthrough, you will learn how to:
  - Customize the color of your todos in their different states. In other words, they will display a different color when they're being hovered over, when they're being crossed off, and when they're just being left the way they are.
  - Add in the weekday and date in the clock and style it to look good
 
-As a disclaimer, I am building this webpage with a particular framework called React, and what this means is that you guys are gonna see a lot of different subfolders and a bunch of code written everywhere that's organized in a particular way. Don't worry about any of it besides the specific parts that I lead you through :)
+As a disclaimer, I am building this webpage with a particular framework called React, and what this means is that you guys are gonna see a lot of different subfolders and a bunch of particular code written everywhere that might seem really unrelated to everything else. Don't worry about any of it besides the specific parts that I lead you through :) 
+
+Lastly, if you start having trouble with the things I mention here, don't be afraid to send me a quick email: conshou@gmail.com. I'm always happy to help.
 
 ## Alright, let's begin!
 
@@ -243,5 +245,5 @@ If you want to learn more - and hopefully you're somewhat curious to do so now :
 
 And lastly, Google! Googling your errors and your issues is the trademark of any web developer. Websites like StackOverflow tend to show up with answers and questions for pretty much any bug or issue you might come across.
 
-Also, if you're ever having problems with anything mentioned in this guide, or just want to chat, my email is: conshou@gmail.com. I'm always happy to help :) 
+Also, like I mentioned in the beginning, if you're ever having problems with anything mentioned in this guide, or just want to chat, my email is: conshou@gmail.com. Stop by and say hi! 
 
