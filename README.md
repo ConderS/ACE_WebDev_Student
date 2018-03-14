@@ -16,7 +16,7 @@ By the end of this walkthrough, you will learn how to:
 
 As a disclaimer, I am building this webpage with a particular framework called React, and what this means is that you guys are gonna see a lot of different subfolders and a bunch of code written everywhere that's organized in a particular way. Don't worry about any of it besides the specific parts that I lead you through :)
 
-Alright, let's begin!
+## Alright, let's begin!
 
 What is HTML?
 
