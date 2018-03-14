@@ -233,7 +233,7 @@ Awesome! You're done. If you go to this [link](https://github.com/ConderS/ACE_We
 
 If you made it this far, congratulations. No seriously, it's a big feat to just let yourself dive into something that you may have very little or no experience of whatsoever. 
 
-If you want to learn more - and hopefully you're somewhat curious to do so :), here are some great links for you to begin with. They'll bring you back to the very beginning again but this time, will  have even more interactive exercises and guides (and probably better ones too) for you to really get the hang of this. If it feels overwhelming and really intimidating, no need to stress, I've been in the exact same position and only feel comfortable now after lots of practice. I no doubt believe that you can do it too :D
+If you want to learn more - and hopefully you're somewhat curious to do so now :), here are some great links for you to begin with. They'll bring you back to the very beginning again but this time, will  have even more interactive exercises and guides (and probably better ones too) for you to really get the hang of this. If it feels overwhelming and really intimidating, no need to stress, I've been in the exact same position and only feel comfortable now after lots of practice. I no doubt believe that you can do it too :D
 
 ### Links to Resources
 
