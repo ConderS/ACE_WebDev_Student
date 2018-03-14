@@ -26,20 +26,22 @@ export class HomeContainer extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    // return bindActionCreators({ 
-    //     __INSERT_ACTIONS__
-    // }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//     // return bindActionCreators({ 
+//     //     __INSERT_ACTIONS__
+//     // }, dispatch);
+// }
 
 
-function mapStateToProps({ browse }) {
+// function mapStateToProps({ browse }) {
 
-    // const { __STATE_PROPERTIES__ } = __REDUCER_GROUP__;
+//     // const { __STATE_PROPERTIES__ } = __REDUCER_GROUP__;
 
-    // return {
-    //     __STATE_PROPERTIES__
-    // };
-}
+//     // return {
+//     //     __STATE_PROPERTIES__
+//     // };
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+// export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+
+export default HomeContainer;
