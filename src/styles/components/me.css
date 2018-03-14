@@ -1,0 +1,14 @@
+.me-container {
+  text-align: center;
+  margin: 100px 20px;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+.me-title {
+  margin-bottom: 20px;
+}
+
+.subheader {
+  color: #bdc3c7;
+}

@@ -1,0 +1,17 @@
+.time-container {
+    text-align: left;
+    margin: 20px;
+    height: auto;
+    width: auto;
+}
+
+.time-main{
+    font-size: 5em;
+    color: #ecf0f1;
+}
+
+.date {
+    font-size: 2em;
+    width: max-content;
+    margin-right: 0;
+}

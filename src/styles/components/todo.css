@@ -1,0 +1,66 @@
+#todo-create {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.todo-container {
+    margin: 100px auto;
+    text-align: center;
+    width: 30%;
+    height: auto;
+}
+
+#todo-list {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: rgba(238, 238, 238, 0.3);
+    font-size: 18px;
+    transition: 0.2s;
+    width: 100%;
+    text-align: left;
+
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: rgba(249, 249, 249, 0.1);
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: rgba(221, 221, 221, 0.5);
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+    background: rgba(250, 250, 250, 0.8);
+    color: #fff;
+    text-decoration: line-through;
+}
+
+li {
+    /*margin-left: 2%;*/
+}
+
+.clear-btn {
+    margin-left: 2%;
+    display: inline-block;
+}
