@@ -41,7 +41,7 @@ Before we get started with customizing the dashboard, we have to install some pa
 
 1. Open a terminal window and navigate to your desktop
 
-	`cd desktop` 
+	`cd ~/desktop` 
 
 2. Install git if you haven't yet, git is basically a piece of software meant for downloading, storing, and sharing code 
 	`git --version`
@@ -141,7 +141,9 @@ Go to where you wrote the `h1` header and change the `p` elements to the followi
             <p className="subheader">{randomQuote.text}</p>
             <p className="subheader">{randomQuote.author}</p>
 
-Now we've inserted a random quote object into the HTML and substituted its properties `text` and `author` as the text for the `p` elements to display. Objects are basically custom data that you can define to be associated with any number or type of properties. Theyr'e defined by `{}` as you can see in the `quotes` array, and the properties I'm referring to are also the same properties that I've created for each object in the array. If this is too much info at once - again, don't worry about it :) It's just to get your feet wet. 
+Now we've inserted a random quote object into the HTML and substituted its properties `text` and `author` as the text for the `p` elements to display. This is also only particular to the web framework I've built this in.
+
+Objects are basically custom data that you can define to be associated with any number or type of properties. They're defined by `{}` as you can see in the `quotes` array, and the properties I'm referring to are also the same properties that I've created for each object in the array. If this is too much info at once - again, don't worry about it :) It's just to get your feet wet. 
 
 ### Customizing the color of the Todos
 
@@ -186,4 +188,60 @@ Great. We're done. When the todo item is checked, the background is basically se
 
 ### Adding the Weekday and the Date to the Clock and styling it
 
+This is a bit more involved, but we're going to add in the Month, Date, and Weekday now to the Clock.
+
+In `src/components/Time.jsx` write the following underneath the `MONTH_NAMES` and `DAYS` arrays: `const date = new Date();`
+
+JavaScript has an object called `Date` that you can create in the way that we just did. We basically created an *instance* of it and set it to a variable called `date`. It's not "stored" in the same way  we've stored information in our other variables but for now, you can treat it the same way as you would any other variable.
+
+The `Date` object happens to have a `.getMonth()` function that, when called, gets the current Month. January is represented as 0, February as 1, March as 2, and so on. Conveniently, we can use this number as an index for the `MONTH_NAMES` array. So let's write: 
+`const month = MONTH_NAMES[date.getMonth()];`
+
+This means get the current Month from the `date` variable that contains the `Date` object. And use that value as the index for the `MONTH_NAMES` array. Since March is represented as 2, this will get index 2 of the array or the third position (since everything starts at 0), and this happens to also correspond to the string "March". We store this string into a variable called `month`.
+
+Note: you might notice that we use `var` and `const` for creating variables. The only difference between the two is that `var` lets you modify the variable after you create it, and `const` prevents you from doing so. I usually `const` so I remind myself I'm not supposed to change the value of that variable anymore.
+
+Now let's get the date of the month with the function `.getDate()` that the `Date` object also happens to have.
+`const monthDay = date.getDate();`
+
+And now the actual weekday:
+`const day = DAYS[date.getDay()];`
+
+Since `.getDay()` returns a number representation of the weekday like `.getMonth()` does (Sunday is 0, Monday is 1, etc..) we use the same tactic as before and use the number as an index for the `DAY` array of strings.
+
+Now we're going to add some HTML with the unique `{}` that we used last time to plug in the information contained within these variables. Underneath the `<Clock ... />` element, write the following:
+
+	   <p className="date">{day}</p>
+	   <p className="date">{month} {monthDay}</p> 
+
+We add some `p` elements again with a `date` class. Let's style it now:
+
+In `src/styles/components/time.css`, write at the bottom:
+
+	.date {
+	    color: #ecf0f1;
+	    font-size: 2em;
+	    width: max-content;
+	    margin-right: 0;
+	}
+
+We set the color of the text to a particular hex color code, the font-size to a particular value, the width to the maximum width of the elements contained within (this might be out of the scope of this guide), and we remove some spacing on the right to make sure it fits (again, this might be out of this guide's scope so don't stress about it). 
+
+Awesome! You're done. If you go to this [link](https://github.com/ConderS/ACE_WebDev_Full), it shows a GIF for what the finished version of the dashboard should look like. The point of all this was just to get you a bit exposed and excited about how web development works so hopefully something like 
+
 ### What you can do now & More Resources
+
+If you made it this far, congratulations. No seriously, it's a big feat to just let yourself dive into something that you may have very little or no experience of whatsoever. 
+
+If you want to learn more - and hopefully you're somewhat curious to do so :), here are some great links for you to begin with. They'll bring you back to the very beginning again but this time, will  have even more interactive exercises and guides (and probably better ones too) for you to really get the hang of this. If it feels overwhelming and really intimidating, no need to stress, I've been in the exact same position and only feel comfortable now after lots of practice. I no doubt believe that you can do it too :D
+
+### Links to Resources
+
+- [Codecademy](https://www.codecademy.com/) is my most recommended resource. Just go on here and select one of the free courses that look interesting, and begin! They teach through step by step interactive exercsies and have been the most helpful resource that I have personally found to learn programming concepts and languages with.
+- [KhanAcademy](https://www.khanacademy.org/computing/computer-programming) is also pretty amazing. Interactive exercises, clear explanations, go for this if you get bored of Codecademy.
+- [FreeCodeCamp](https://www.freecodecamp.org/) is really great as well. They'll bring you through everything you need to know about web development and more. AND you get to work on projects for non-profits. I do recommend that you first go through the links above before you try coming here. But definitely give this a shot once you think you have a good grasp of things.
+
+And lastly, Google! Googling your errors and your issues is the trademark of any web developer. Websites like StackOverflow tend to show up with answers and questions for pretty much any bug or issue you might come across.
+
+Also, if you're ever having problems with anything mentioned in this guide, or just want to chat, my email is: conshou@gmail.com. I'm always happy to help :) 
+
