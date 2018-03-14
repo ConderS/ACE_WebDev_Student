@@ -67,7 +67,7 @@ Also, quite the ugly thing we have here. Let's make it pretty.
 Within the `src` directory, go into the `styles` folder and open up `index.css`. 
 Btw, the location of this file is represented in this manner as `src/styles/index.css` and that's how I'll refer to file locations moving forward.
  
- This is all CSS, and `body`  happens to be the HTML element that covers the entire webpage. If we we change the color of the `body` element, then it should change the backdrop of the entire webpage.
+ This is all CSS, and `body`  happens to be the HTML element that covers the entire webpage (located in `public/index.html`). If we we change the color of the `body` element, then it should change the backdrop of the entire webpage.
 
 So, let's add `background-color: steelblue;`
 
@@ -145,4 +145,45 @@ Now we've inserted a random quote object into the HTML and substituted its prope
 
 ### Customizing the color of the Todos
 
+You might also notice that the todos are all one color and don't do anything when you click on them. This just requires a little bit of CSS.
+
+Go to `src/styles/components/todos.css` 
+
+Under the comment: `/* Set all odd list items to a different color (zebra-stripes) */` we're going to place the corresponding CSS.
+
+
+    ul li:nth-child(odd) {
+        background: rgba(249, 249, 249, 0.1);
+    }
+
+This is a very specific usage of CSS that you probably won't use that often. Basically it's setting the color of the background to the rgba value that's shown. `background`	 is a CSS property that can take in either color or image urls, so in this case it's functioning the same as `background-color`. 
+
+Here, the CSS is: **For each** `ul` element that exists in this code, look at the `li` elements contained within, and set the background of every odd-numbered `li` element to this rgba value. The first `li` element would have this styling placed on it and so would the third, and fifth, etc..
+
+ I chose these specific elements because I actually generate the Todo items as `li` HTML elements within one big `ul` element. So that's why it works out the way it does.
+
+Now let's set a background color for hovering. 
+
+ul li:hover {
+    background: rgba(221, 221, 221, 0.5);
+}
+
+In CSS, we can actually set styling on a specific *state* of an element. You can look up the different states available for HTML elements but in this case we're only concerned with the `hover` state. By including `:hover` to `li` we're saying that we want to set this styling only when we hover over a `li`  element that happens to be contained with a `ul` element.
+
+Hopefully that wasn't too confusing. 
+
+Now as our very last set of styling, we want the text to be crossed off when we click on it and the color to change too. Let's add:
+
+	ul li.checked {
+	    background: rgba(250, 250, 250, 0.8);
+	    color: #fff;
+	    text-decoration: line-through;
+	}
+
+In the JavaScript code, we're actually manually adding the `checked` class to the `li` element when we click on it. Don't worry about how it's done, for our purposes I just wanted you to understand that `checked` can be any CSS class and that it's not some special keyword like the above cases for `hover` and `nth-child`. Also notice that we're using the `.` here to refer to `checked` and not the `:`, this usually means we're referring to a class and not a state.
+
+Great. We're done. When the todo item is checked, the background is basically set to white, the color of the text is set to white, and the text gets crossed off (`text-decoration` is responsible for this last part).
+
 ### Adding the Weekday and the Date to the Clock and styling it
+
+### What you can do now & More Resources
