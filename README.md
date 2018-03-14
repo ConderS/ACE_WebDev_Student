@@ -243,7 +243,7 @@ If you want to learn more - and hopefully you're somewhat curious to do so now :
 - [KhanAcademy](https://www.khanacademy.org/computing/computer-programming) is also pretty amazing. Interactive exercises, clear explanations, go for this if you get bored of Codecademy.
 - [FreeCodeCamp](https://www.freecodecamp.org/) is really great as well. They'll bring you through everything you need to know about web development and more. AND you get to work on projects for non-profits. I do recommend that you first go through the links above before you try coming here. But definitely give this a shot once you think you have a good grasp of things.
 
-And lastly, Google! Googling your errors and your issues is the trademark of any web developer. Websites like StackOverflow tend to show up with answers and questions for pretty much any bug or issue you might come across.
+And lastly, Google! Googling your errors and your issues is the trademark of any developer. Websites like StackOverflow tend to show up with answers and questions for pretty much any bug or issue you might come across.
 
-Also, like I mentioned in the beginning, if you're ever having problems with anything mentioned in this guide, or just want to chat, my email is: conshou@gmail.com. Stop by and say hi! 
+Also, like I mentioned in the beginning, if you're ever having problems with anything mentioned in this guide, or just want to chat, my email is: conshou@gmail.com. Don't be afraid to say hi :D 
 
