@@ -168,9 +168,9 @@ Here, the CSS is: **For each** `ul` element that exists in this code, look at th
 
 Now let's set a background color for hovering. 
 
-ul li:hover {
-    background: rgba(221, 221, 221, 0.5);
-}
+	ul li:hover {
+	    background: rgba(221, 221, 221, 0.5);
+	}
 
 In CSS, we can actually set styling on a specific *state* of an element. You can look up the different states available for HTML elements but in this case we're only concerned with the `hover` state. By including `:hover` to `li` we're saying that we want to set this styling only when we hover over a `li`  element that happens to be contained with a `ul` element.
 
