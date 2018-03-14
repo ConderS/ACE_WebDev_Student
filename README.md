@@ -30,7 +30,8 @@ What is CSS?
 
 What is JavaScript (or JS for short)?
 
-- JavaScript is what makes a webpage interactive. When you click a button to send data to a server, or when you want the text to turn blue ONLY when you hover over it, JavaScript is responsible for making all that happen.
+- JavaScript is what makes a webpage interactive. It allows HTML/CSS to change based on some signal that you decide on. When you click a button to send data to a server, or when you want the text to turn blue ONLY when you hover over it, JavaScript is responsible for making all that happen.
+- 
 - Unlike HTML/CSS, JavaScript is a programming language like Python (what you saw with our rock paper scissors example) and can be used to write other coding programs outside of those meant just for web development as well.
 - [More Info...](https://www.w3schools.com/js/)
 
@@ -66,7 +67,7 @@ Also, quite the ugly thing we have here. Let's make it pretty.
 Within the `src` directory, go into the `styles` folder and open up `index.css`. 
 Btw, the location of this file is represented in this manner as `src/styles/index.css` and that's how I'll refer to file locations moving forward.
  
- This is all CSS, and `body`  happens to be the HTML element that covers the entire webpage. If we we change the color of the `body` element, then it should change the backdrop of the entire webpage.
+ This is all CSS, and `body`  happens to be the HTML element that covers the entire webpage (located in `public/index.html`). If we we change the color of the `body` element, then it should change the backdrop of the entire webpage.
 
 So, let's add `background-color: steelblue;`
 
@@ -92,7 +93,7 @@ Underneath the `h1` element, put:
 
 Now you've added paragraph text, `p` with a `subheader` CSS class each, that displays the text written between the `p` tags. You should now see this text showing in the center of the screen.
 
-Go to `me.css` now and place the following CSS inside underneath what's already written:
+Go to `src/styles/components/me.css` now and place the following CSS inside underneath what's already written:
 
     .me-title {
       margin-bottom: 20px;
@@ -109,9 +110,80 @@ Remember those CSS classes we added earlier, here's when they come into play. Wi
 
 ### Building a random quote selector
 
-...in progress...
+Lets get some quotes down now and have the text randomly choose between them. Because this involves
 
+In the `Me.jsx` file, find the `randomQuotes()` function. I've already stored some quotes into an array called `quotes`. Now we're going to do just a little bit of arithmetic to get this working. 
+
+First we're going to need the number of quotes in the `quotes` array. We can use `quotes.length` to make that happen. However, we also to subtract 1 too for reasons I'll explain later. So write in: `var numberOfQuotes = quotes.length - 1;` 
+
+Notice that we're creating a variable called `numberofQuotes` that we're storing this information in.
+
+Now, like the rock-paper-scissors example you guys saw earlier in a programming language called Python, we're going to use a random generator available in JavaScript to do something similar.
+
+In the next line, write: `var random = Math.random() * numberOfQuotes;`. 
+
+We're saying here, get a random decimal between 0 and 1 and multiply it with `numberOfQuotes`, so this means if we have 3 quotes, and we've subtracted 1 like earlier, it's going to choose a number between 0 and 2 now. 
+
+However, the thing about arrays, is that we can only access them by using integers to denote the position. The first element is located at index 0, the second at index 1, etc... So we need to round the decimal to some integer: `var quoteIndex = Math.round(random);`
+
+Also, because arrays store the first element at index 0 rather than 1, it's why we had to subtract 1 earlier, so that we're in the correct range. Otherwise, if we round to 3 and try getting the quote located at index 3, we'd get an error. It's because our third, and last quote, is stored at index 2 and nothing exists at indices beyond that.
+
+Now, let's get the quote with the `quoteIndex` that we've calculated:
+ `var randomQuote = quotes[index];`
+
+And since this is the quote we want, let's return it from the function:
+`return randomQuote;`
+
+Now, for reasons out of the scope of this guide, this quote is going to be returned and we're going to have access to it in the HTML now. Just keep in mind that the way in which we have access to it right now is particular to the kind of web framework I've build this dashboard in, but you won't always be able to refer to it like this. Either way, you guys can get the gist of how JavaScript and HTML work together.
+
+Go to where you wrote the `h1` header and change the `p` elements to the following:
+
+            <p className="subheader">{randomQuote.text}</p>
+            <p className="subheader">{randomQuote.author}</p>
+
+Now we've inserted a random quote object into the HTML and substituted its properties `text` and `author` as the text for the `p` elements to display. Objects are basically custom data that you can define to be associated with any number or type of properties. Theyr'e defined by `{}` as you can see in the `quotes` array, and the properties I'm referring to are also the same properties that I've created for each object in the array. If this is too much info at once - again, don't worry about it :) It's just to get your feet wet. 
 
 ### Customizing the color of the Todos
 
+You might also notice that the todos are all one color and don't do anything when you click on them. This just requires a little bit of CSS.
+
+Go to `src/styles/components/todos.css` 
+
+Under the comment: `/* Set all odd list items to a different color (zebra-stripes) */` we're going to place the corresponding CSS.
+
+
+    ul li:nth-child(odd) {
+        background: rgba(249, 249, 249, 0.1);
+    }
+
+This is a very specific usage of CSS that you probably won't use that often. Basically it's setting the color of the background to the rgba value that's shown. `background`	 is a CSS property that can take in either color or image urls, so in this case it's functioning the same as `background-color`. 
+
+Here, the CSS is: **For each** `ul` element that exists in this code, look at the `li` elements contained within, and set the background of every odd-numbered `li` element to this rgba value. The first `li` element would have this styling placed on it and so would the third, and fifth, etc..
+
+ I chose these specific elements because I actually generate the Todo items as `li` HTML elements within one big `ul` element. So that's why it works out the way it does.
+
+Now let's set a background color for hovering. 
+
+ul li:hover {
+    background: rgba(221, 221, 221, 0.5);
+}
+
+In CSS, we can actually set styling on a specific *state* of an element. You can look up the different states available for HTML elements but in this case we're only concerned with the `hover` state. By including `:hover` to `li` we're saying that we want to set this styling only when we hover over a `li`  element that happens to be contained with a `ul` element.
+
+Hopefully that wasn't too confusing. 
+
+Now as our very last set of styling, we want the text to be crossed off when we click on it and the color to change too. Let's add:
+
+	ul li.checked {
+	    background: rgba(250, 250, 250, 0.8);
+	    color: #fff;
+	    text-decoration: line-through;
+	}
+
+In the JavaScript code, we're actually manually adding the `checked` class to the `li` element when we click on it. Don't worry about how it's done, for our purposes I just wanted you to understand that `checked` can be any CSS class and that it's not some special keyword like the above cases for `hover` and `nth-child`. Also notice that we're using the `.` here to refer to `checked` and not the `:`, this usually means we're referring to a class and not a state.
+
+Great. We're done. When the todo item is checked, the background is basically set to white, the color of the text is set to white, and the text gets crossed off (`text-decoration` is responsible for this last part).
+
 ### Adding the Weekday and the Date to the Clock and styling it
+
+### What you can do now & More Resources
