@@ -28,18 +28,7 @@ export class Me extends Component {
     
         //------STUDENT
         
-        //
-        // var numberOfQuotes = quotes.length - 1;
-        // var random = Math.random() * numberOfQuotes;
-
-        // var quoteIndex = Math.round(random);
-
-        // console.log(quoteIndex);
-
-
-        // var randomQuote = quotes[quoteIndex];
-
-        // return randomQuote;
+        
     }
 
     render() {
