@@ -30,7 +30,8 @@ What is CSS?
 
 What is JavaScript (or JS for short)?
 
-- JavaScript is what makes a webpage interactive. When you click a button to send data to a server, or when you want the text to turn blue ONLY when you hover over it, JavaScript is responsible for making all that happen.
+- JavaScript is what makes a webpage interactive. It allows HTML/CSS to change based on some signal that you decide on. When you click a button to send data to a server, or when you want the text to turn blue ONLY when you hover over it, JavaScript is responsible for making all that happen.
+- 
 - Unlike HTML/CSS, JavaScript is a programming language like Python (what you saw with our rock paper scissors example) and can be used to write other coding programs outside of those meant just for web development as well.
 - [More Info...](https://www.w3schools.com/js/)
 
@@ -92,7 +93,7 @@ Underneath the `h1` element, put:
 
 Now you've added paragraph text, `p` with a `subheader` CSS class each, that displays the text written between the `p` tags. You should now see this text showing in the center of the screen.
 
-Go to `me.css` now and place the following CSS inside underneath what's already written:
+Go to `src/styles/components/me.css` now and place the following CSS inside underneath what's already written:
 
     .me-title {
       margin-bottom: 20px;
@@ -109,8 +110,38 @@ Remember those CSS classes we added earlier, here's when they come into play. Wi
 
 ### Building a random quote selector
 
-...in progress...
+Lets get some quotes down now and have the text randomly choose between them. Because this involves
 
+In the `Me.jsx` file, find the `randomQuotes()` function. I've already stored some quotes into an array called `quotes`. Now we're going to do just a little bit of arithmetic to get this working. 
+
+First we're going to need the number of quotes in the `quotes` array. We can use `quotes.length` to make that happen. However, we also to subtract 1 too for reasons I'll explain later. So write in: `var numberOfQuotes = quotes.length - 1;` 
+
+Notice that we're creating a variable called `numberofQuotes` that we're storing this information in.
+
+Now, like the rock-paper-scissors example you guys saw earlier in a programming language called Python, we're going to use a random generator available in JavaScript to do something similar.
+
+In the next line, write: `var random = Math.random() * numberOfQuotes;`. 
+
+We're saying here, get a random decimal between 0 and 1 and multiply it with `numberOfQuotes`, so this means if we have 3 quotes, and we've subtracted 1 like earlier, it's going to choose a number between 0 and 2 now. 
+
+However, the thing about arrays, is that we can only access them by using integers to denote the position. The first element is located at index 0, the second at index 1, etc... So we need to round the decimal to some integer: `var quoteIndex = Math.round(random);`
+
+Also, because arrays store the first element at index 0 rather than 1, it's why we had to subtract 1 earlier, so that we're in the correct range. Otherwise, if we round to 3 and try getting the quote located at index 3, we'd get an error. It's because our third, and last quote, is stored at index 2 and nothing exists at indices beyond that.
+
+Now, let's get the quote with the `quoteIndex` that we've calculated:
+ `var randomQuote = quotes[index];`
+
+And since this is the quote we want, let's return it from the function:
+`return randomQuote;`
+
+Now, for reasons out of the scope of this guide, this quote is going to be returned and we're going to have access to it in the HTML now. Just keep in mind that the way in which we have access to it right now is particular to the kind of web framework I've build this dashboard in, but you won't always be able to refer to it like this. Either way, you guys can get the gist of how JavaScript and HTML work together.
+
+Go to where you wrote the `h1` header and change the `p` elements to the following:
+
+            <p className="subheader">{randomQuote.text}</p>
+            <p className="subheader">{randomQuote.author}</p>
+
+Now we've inserted a random quote object into the HTML and substituted its properties `text` and `author` as the text for the `p` elements to display. Objects are basically custom data that you can define to be associated with any number or type of properties. Theyr'e defined by `{}` as you can see in the `quotes` array, and the properties I'm referring to are also the same properties that I've created for each object in the array. If this is too much info at once - again, don't worry about it :) It's just to get your feet wet. 
 
 ### Customizing the color of the Todos
 
