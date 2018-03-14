@@ -186,7 +186,7 @@ Now as our very last set of styling, we want the text to be crossed off when we 
 
 In the JavaScript code, we're actually manually adding the `checked` class to the `li` element when we click on it. Don't worry about how it's done, for our purposes I just wanted you to understand that `checked` can be any CSS class and that it's not some special keyword like the above cases for `hover` and `nth-child`. Also notice that we're using the `.` here to refer to `checked` and not the `:`, this usually means we're referring to a class and not a state.
 
-Great. We're done. When the todo item is checked, the background is basically set to white, the color of the text is set to white, and the text gets crossed off (`text-decoration` is responsible for this last part).
+Great. We're done. When the todo item is checked, the background is set to white, the color of the text is set to white, and the text gets crossed off (`text-decoration` is responsible for this last part).
 
 ### Adding the Weekday and the Date to the Clock and styling it
 
