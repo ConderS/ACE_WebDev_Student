@@ -8,17 +8,15 @@ You see, it's not quite done yet. It needs some polishing and some of its featur
 
 By the end of this walkthrough, you will learn how to:
 
+ - Customize the background to any color or image
  - Insert your Name and any quote you'd like
- - Build a random quote generator
- - Add any background color or image
+ - Build a random quote selector
  - Customize the color of your todos in their different states. In other words, they will display a different color when they're being hovered over, when they're being crossed off, and when they're just being left the way they are.
  - Add in the weekday and date in the clock and style it to look good
 
 As a disclaimer, I am building this webpage with a particular framework called React, and what this means is that you guys are gonna see a lot of different subfolders and a bunch of code written everywhere that's organized in a particular way. Don't worry about any of it besides the specific parts that I lead you through :)
 
 Alright, let's begin!
-
-### Inserting your Name & Quotes
 
 What is HTML?
 
@@ -30,3 +28,15 @@ What is CSS?
 -  CSS stands for *Cascading Style Sheets*
 - CSS decides **how** HTML  looks. Should this text be blue, or big? Should this part of the webpage be on the left side of the screen? [More info...](https://www.w3schools.com/css/default.asp)
 
+What is JavaScript (or JS for short)?
+
+
+### Customizing the Background
+
+### Inserting your Name & Quotes
+
+### Building a random quote selector
+
+### Customizing the color of the Todos
+
+### Adding the Weekday and the Date to the Clock and styling it
