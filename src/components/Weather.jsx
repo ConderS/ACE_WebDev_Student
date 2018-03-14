@@ -46,6 +46,19 @@ export class Weather extends Component {
     }
 
     getWeather() {
+        var today = new Date().getDate().toString();
+        
+        var cachedDay = localStorage.getItem('today').toString();
+        
+        if (today === cachedDay) {
+            console.log("It's the same day, getting cached weather data...");
+
+            var weather = JSON.parse(localStorage.getItem('weather'));
+            this.processWeatherData(weather);
+
+            return;
+        } 
+
         this.getCoordinates().then((coords) => {
 
                 console.log("RECEIVED COORDS: ", coords);
@@ -66,10 +79,11 @@ export class Weather extends Component {
                     })
                     .then(data => {
                         console.log(data);
-                        
-                        var weather = this.processWeatherData(data);
 
-                        // this.setState({ weather });
+                        localStorage.setItem('weather', JSON.stringify(data));
+                        localStorage.setItem('today', today);
+
+                        this.processWeatherData(data);
                     })
                     .catch(err => console.log(err));
         });
@@ -86,11 +100,11 @@ export class Weather extends Component {
             var currWeather = day.weather[0].main;
 
             var currDate = new Date(date);
-            var day = currDate.getDay();
+            var currDay = currDate.getDay();
             
-            if (day !== prevDay) {
+            if (currDay !== prevDay) {
                 weather.push(currWeather);
-                prevDay = day;
+                prevDay = currDay;
             }
         });
 
