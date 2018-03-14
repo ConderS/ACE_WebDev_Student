@@ -48,13 +48,6 @@ export class Me extends Component {
 
         return (
           <div className="me-container">
-            {/*Student*/}
-
-            {/*
-            <h1 className="me-title">Welcome Conder</h1>
-            <p className="subheader me-msg">{randomQuote.text}</p>
-            <p className="subheader me-author">- {randomQuote.author}</p>
-        */}
 
           </div>
           );

@@ -22,11 +22,8 @@ body {
 
     /* 1. Find a background image 
        2. Put it in the "assets" folder
-       3. Change this url string so that it matches the name of the image file
+       3. Add in a url string to "background-image" so that it matches the name of the image file
        4. Wait for the page to refresh! */
-
-    /*background-image: url("../assets/footer_lodyas.png");*/
-    /*background-color: steelblue;*/
 
 }
 
