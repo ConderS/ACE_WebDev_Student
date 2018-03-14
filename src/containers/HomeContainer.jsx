@@ -9,14 +9,16 @@ import { bindActionCreators  } from 'redux';
 import Me from '../components/Me';
 import Time from '../components/Time';
 import Todo from '../components/Todo';
+import Weather from '../components/Weather';
 
 export class HomeContainer extends Component {
     render() {
         return (
-            <div class="home-container">
-                <Time />
+            <div className="home-container">
+                {/*<Time />
                 <Me />
-                <Todo />
+                <Todo />*/}
+                <Weather />
             </div>
             );
     }
