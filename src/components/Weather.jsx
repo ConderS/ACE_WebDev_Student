@@ -48,9 +48,9 @@ export class Weather extends Component {
     getWeather() {
         var today = new Date().getDate().toString();
         
-        var cachedDay = localStorage.getItem('today').toString();
+        var cachedDay = localStorage.getItem('today');
         
-        if (today === cachedDay) {
+        if (cachedDay && today === cachedDay.toString()) {
             console.log("It's the same day, getting cached weather data...");
 
             var weather = JSON.parse(localStorage.getItem('weather'));
