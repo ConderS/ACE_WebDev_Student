@@ -112,7 +112,7 @@ Remember those CSS classes we added earlier, here's when they come into play. Wi
 
 ### Building a random quote selector
 
-Lets get some quotes down now and have the text randomly choose between them. Because this involves
+Lets get some quotes down now and have the text randomly choose between them.
 
 In the `Me.jsx` file, find the `randomQuotes()` function. I've already stored some quotes into an array called `quotes`. Now we're going to do just a little bit of arithmetic to get this working. 
 
